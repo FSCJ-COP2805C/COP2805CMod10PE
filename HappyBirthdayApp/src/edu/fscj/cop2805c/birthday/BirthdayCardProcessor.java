@@ -30,6 +30,14 @@ public class BirthdayCardProcessor extends Thread
         this.safeQueue = safeQueue;
 
         logger = new BirthdayCardLogger();
+
+        // wait for a bit to allow eventlog server to start
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException ie) {
+            System.out.println("sleep interrupted! " + ie);
+        }
+
         try {
             logSocket = new Socket("localhost", BirthdayCardLogger.LOGPORT);
             System.out.println("connected to log server");

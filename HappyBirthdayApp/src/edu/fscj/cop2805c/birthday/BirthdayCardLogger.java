@@ -43,7 +43,6 @@ public class BirthdayCardLogger extends Thread  {
 
         try {
             server = new ServerSocket(LOGPORT);
-
             socket = server.accept();
             inputStream = new ObjectInputStream(socket.getInputStream());
 

@@ -14,16 +14,25 @@ import java.time.ZonedDateTime;
 import java.util.Locale;
 
 public class User implements Serializable {
-    private static Integer id = 0; // primary key
+    private static Integer idStatic = 0;
+    private Integer id; // primary key
     private String fName;
     private String lName;
     private String email;
     Locale locale;
     private ZonedDateTime birthday;
 
-    public User(String fName, String lName, String email, Locale locale,
+
+    // create new user
+    // if id is 0, set it based on static value
+    public User(Integer id, String fName, String lName, String email, Locale locale,
                 ZonedDateTime birthday) {
-        id++;
+        if (id == 0) {
+            idStatic++;
+            this.id = idStatic;
+        } else {
+            this.id = id;
+        }
         this.lName = lName;
         this.fName = fName;
         this.email = email;

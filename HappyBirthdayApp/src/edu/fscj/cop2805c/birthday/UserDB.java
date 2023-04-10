@@ -1,11 +1,15 @@
-package edu.fscj.cop2805c.birthday;
+// UserDB.java
+// D. Singletary
+// 4/8/23
+// Class which manages DB operations for the Happy Birthday Users
 
-import com.microsoft.sqlserver.jdbc.SQLServerException;
+package edu.fscj.cop2805c.birthday;
 
 import java.sql.*;
 import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.Locale;
+import com.microsoft.sqlserver.jdbc.SQLServerException;
 
 public final class UserDB {
 
